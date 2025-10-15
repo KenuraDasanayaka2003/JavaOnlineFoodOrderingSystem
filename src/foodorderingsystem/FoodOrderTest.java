@@ -69,7 +69,7 @@ public class FoodOrderTest
                         
                         case 5:
                         {
-                            actionStack.menuUndo(menuList);
+                            undoMenuTask(menuList,actionStack);
                             break;
                         }
                     }
@@ -116,7 +116,7 @@ public class FoodOrderTest
                         
                         case 6:
                         {
-                            actionStack.orderUndo(normalOrderList, priorOrderList);
+                            undoOrderTasks(normalOrderList,priorOrderList,actionStack);
                             break;
                         }
                             
@@ -234,6 +234,11 @@ public class FoodOrderTest
             System.out.println("The item with ID "+found+" is found successfully");
             System.out.println(menuList.findItemByID(id));
         }
+    }
+    
+    public static void undoMenuTask(LinkedList<MenuItem> menuList, UndoStack menuStackList)
+    {
+        menuStackList.menuUndo(menuList);
     }
     
     public static void displayMenu(LinkedList menuList)
@@ -359,6 +364,11 @@ public class FoodOrderTest
         {
             System.out.println(normalOrder.getTotalSummary());
         }
+    }
+    
+    public static void undoOrderTasks(Queue<Order> normalOrderList,PriorityQueue<Order> priorOrderList,UndoStack menuStackList)
+    {
+        menuStackList.orderUndo(normalOrderList, priorOrderList);
     }
     
     public static void generateReport(List<Order> completedOrders)
