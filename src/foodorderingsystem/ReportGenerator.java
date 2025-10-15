@@ -12,7 +12,7 @@ public class ReportGenerator
         {
             int mid = left + (right - left)/2;
             
-            mergeSort(orders,left,mid);
+            mergeSort(orders,left,mid); //Recurrence calling of the mergeSort method
             mergeSort(orders,mid+1,right);
             
             merge(orders,left,mid,right);
@@ -20,14 +20,18 @@ public class ReportGenerator
         }
     }
     
+    //Merging part of the list (Divide and Conquer)
     public static void merge(List<Order> orders,int left,int mid,int right)
     {
+        //Initialize the sizes of the left and right arrays
         int leftNum = mid - left + 1;
         int rightNum = right - mid;
         
+        //Initialize the left and right lists 
         List<Order> leftList = new ArrayList<>();
         List<Order> rightList = new ArrayList<>();
         
+        //Add the existing elements for left and right lists separately
         for (int i = 0; i < leftNum; i++)
         {
             leftList.add(orders.get(left + i));
@@ -40,6 +44,7 @@ public class ReportGenerator
         
         int i=0,j=0,k=left;
         
+        //Sorting part according to the total cost of the orders
         while (i < leftNum && j < rightNum) 
         {
             if (leftList.get(i).totalCost <= rightList.get(j).totalCost) 
@@ -55,6 +60,7 @@ public class ReportGenerator
             k++;
         }
 
+        //Insert the remaining elements into the corresponding lists
         while (i < leftNum) 
         {
             orders.set(k, leftList.get(i));
@@ -70,6 +76,7 @@ public class ReportGenerator
         }
     }
     
+    //Complexity with O(n) for traverse through the list and O(1) for return the details
     public void generateReport(List<Order> orders)
     {
         for(Order order : orders)

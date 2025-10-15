@@ -56,6 +56,7 @@ public class Order implements Comparable<Order>
     //Complexity with O(1)
     public void removeOrderItem(String itemID) 
     {
+        //Iterator until the matching element is found
         Iterator<OrderItem> iterator = orderedItems.iterator();
         while(iterator.hasNext())
         {

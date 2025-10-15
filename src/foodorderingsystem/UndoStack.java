@@ -81,6 +81,7 @@ public class UndoStack
             return;
         }
         
+        //Get the last action of the stack
         UndoAction action = popAction();
         Order target = (Order) action.target;
         boolean isPremium = false;

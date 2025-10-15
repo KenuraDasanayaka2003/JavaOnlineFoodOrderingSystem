@@ -7,6 +7,7 @@ public class MenuItem
     private String type;
     private double itemPrice;
     
+    //Constructor to the initialize the MenuItem fields
     public MenuItem(String itemID,String itemName,String type,double itemPrice)
     {
         setItemID(itemID);

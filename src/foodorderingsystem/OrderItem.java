@@ -6,6 +6,7 @@ public class OrderItem
     public int quantity;
     public double totalPrice;
     
+    //Costructor to initialize the fields of OrderItem
     public OrderItem(LinkedList menuList,String id,int quantity)
     {
         this.item = findMenuItem(menuList,id);
@@ -45,6 +46,7 @@ public class OrderItem
         this.totalPrice = totalPrice;
     }
     
+    //Complexity with O(1) 
     @Override
     public String toString()
     {

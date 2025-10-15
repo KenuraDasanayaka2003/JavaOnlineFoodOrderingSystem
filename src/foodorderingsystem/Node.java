@@ -5,6 +5,7 @@ public class Node<T>
     private T value;
     public Node<T> next;
     
+    //Constructor to Initialize the value and pointer of the node
     public Node(T value)
     {
         setValue(value);

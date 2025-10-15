@@ -27,49 +27,53 @@ public class FoodOrderTest
         
         do
         {
+            //Show related tasks until user terminates it
             showTasks();
             System.out.print("Enter your choice : ");
             decision = mainScan.nextInt();
             mainScan.nextLine();
             
+            //Take the correct decision regarding to the user input
             switch(decision)
             {
                 case 1:
                 {
+                    //Show menu related tasks 
                     showMenuRelatedTasks();
                     System.out.print("Enter your decision : ");
                     decisionForMenu = menuDecision.nextInt();
                     menuDecision.nextLine();
                     
+                    //Take the correct decision to regarding to the input
                     switch(decisionForMenu)
                     {
                         case 1:
                         {
-                            createMenu(menuList,actionStack);
+                            createMenu(menuList,actionStack); //Create the menu
                             break;
                         }
                         
                         case 2:
                         {
-                            findByID(menuList);
+                            findByID(menuList); //Find an menu Item by using the order ID
                             break;
                         }
                         
                         case 3:
                         {
-                            removeByID(menuList,actionStack);
+                            removeByID(menuList,actionStack); //Delete an item from the menu
                             break;
                         }
                         
                         case 4:
                         {
-                            displayMenu(menuList);
+                            displayMenu(menuList); //Display all the menu items
                             break;
                         }
                         
                         case 5:
                         {
-                            undoMenuTask(menuList,actionStack);
+                            undoMenuTask(menuList,actionStack); //Undo the last action of the menu
                             break;
                         }
                     }
@@ -78,45 +82,47 @@ public class FoodOrderTest
                 
                 case 2:
                 {
+                    //Show order related tasks
                     showOrderRelatedTasks();
                     System.out.print("Enter your decision : ");
                     decisionForOrder = orderDecision.nextInt();
                     orderDecision.nextLine();
                     
+                    //Take the correct decision to regarding to the input
                     switch(decisionForOrder)
                     {
                         case 1:
                         {
-                            makeOrder(newOrder,menuList,actionStack);
+                            makeOrder(newOrder,menuList,actionStack); //Place a new order
                             break;
                         }
                         
                         case 2:
                         {
-                            cancelOrder(newOrder,actionStack);
+                            cancelOrder(newOrder,actionStack); //Cancel an order 
                             break;
                         }
                         case 3:
                         {
-                            getServingOrder(newOrder,completedOrderList);
+                            getServingOrder(newOrder,completedOrderList); //Get the serving order at the moment
                             break;
                         }
                         
                         case 4:
                         {
-                            getNextOrder(newOrder);
+                            getNextOrder(newOrder); //Get the next order to be served
                             break;
                         }
                         
                         case 5:
                         {
-                            displayOrderList(newOrder,normalOrderList,priorOrderList);
+                            displayOrderList(newOrder,normalOrderList,priorOrderList); //Display the all orders
                             break;
                         }
                         
                         case 6:
                         {
-                            undoOrderTasks(normalOrderList,priorOrderList,actionStack);
+                            undoOrderTasks(normalOrderList,priorOrderList,actionStack); //Undo the last action of order
                             break;
                         }
                             
@@ -126,7 +132,7 @@ public class FoodOrderTest
                 
                 case 3:
                 {
-                    generateReport(completedOrderList);
+                    generateReport(completedOrderList); //Generate the report 
                     break;
                 }
                 

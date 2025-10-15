@@ -13,6 +13,7 @@ public class OrderManager
     private PriorityQueue<Order> priorityOrders;
     private List<Order> completedOrders;
     
+    //Constructor to initialize the Lists with Orders
     public OrderManager()
     {
         this.normalOrders = new ArrayDeque<>();
@@ -96,12 +97,15 @@ public class OrderManager
         }
         return nextOrder;
     }
-    
+   
+    //Getters to get the two lists with orders
+    //Complexity with O(1)
     public Queue<Order> getNormalOrders()
     {
         return normalOrders;
     }
     
+    //Complexity with O(1)
     public PriorityQueue<Order> getPriorityOrders()
     {
         return priorityOrders;

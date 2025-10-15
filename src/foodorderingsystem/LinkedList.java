@@ -6,6 +6,7 @@ public class LinkedList<T>
     public Node<T> rear;
     int count=0;
     
+    //Constructor to initialize the first and rear elements in the LinkedList
     public LinkedList()
     {
         this.first=null;
@@ -17,6 +18,7 @@ public class LinkedList<T>
     {
         Node newNode = new Node(value);
         
+        //Check whether the existing linkedList is empty or not
         if(isEmpty())
         {
             first=newNode;
@@ -56,6 +58,7 @@ public class LinkedList<T>
         Node<T> current = first;
         Node<T> previous = null;
         
+        //Traverse through the list until the list is end
         while(current != null)
         {
             if(current.getValue().equals(found))
@@ -95,7 +98,8 @@ public class LinkedList<T>
         {
             if(current.getValue() instanceof MenuItem)
             {
-                MenuItem item = (MenuItem) current.getValue();
+                MenuItem item = (MenuItem) current.getValue(); //Cast the object to MenuItem Object
+                //Check whether given key is equals to the existing item in the list
                 if(item.getItemID().equalsIgnoreCase(key))
                 {
                     found = current.getValue();

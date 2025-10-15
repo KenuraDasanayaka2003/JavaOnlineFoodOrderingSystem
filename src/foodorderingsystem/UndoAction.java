@@ -6,6 +6,7 @@ public class UndoAction
     public Object target;
     public Object backUp;
     
+    //Constructor to initialize the fields of UndoAction
     public UndoAction(String actionType,Object target,Object backUp)
     {
         this.actionType = actionType;
